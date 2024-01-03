@@ -3,6 +3,9 @@ export default {
   content: ["/index.html", "./src/**/*.{ts,tsx}"],
   theme: {
     extend: {},
+    fontFamily: {
+      customFont: ['"Audiowide"', "sans-serif"],
+    },
   },
   plugins: [],
 };

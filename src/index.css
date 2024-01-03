@@ -2,7 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Audiowide';
+  src: local('Audiowide'), url(./assets/fonts/Audiowide.ttf) format('truetype');
+}
+
 @layer base {
+  html {
+    font-family: "Audiowide", system-ui, sans-serif;
+  }
+
   :root {
     color: rgba(255, 255, 255, 0.87);
     background-color: #242424;
