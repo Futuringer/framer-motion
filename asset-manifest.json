@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.css": "/framer-motion/assets/index-c9786bf7.css",
+    "main.js": "/framer-motion/assets/index-f0e337d1.js",
+    "index.html": "/framer-motion/index.html"
+  },
+  "entrypoints": [
+    "assets/index-c9786bf7.css",
+    "assets/index-f0e337d1.js"
+  ]
+}
