@@ -1,5 +1,5 @@
 import { motion, useAnimation, Variant } from "framer-motion";
-import { CSSProperties, useRef } from "react";
+import { CSSProperties, useEffect, useRef } from "react";
 
 type AnimatedTextProps = {
   text: string | string[];
@@ -22,7 +22,7 @@ const defaultAnimations = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.1,
+      duration: 0.25,
     },
   },
 };
@@ -37,17 +37,39 @@ export const AnimatedText = ({
   const controls = useAnimation();
   const textArray = Array.isArray(text) ? text : [text];
   const ref = useRef(null);
+  const intRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const paintText = async () => {
+    await controls.start("hidden");
+    controls.start("visible");
+  };
+
+  const handleClick = () => {
+    if (intRef) {
+      clearInterval(intRef.current!);
+      paintText();
+      intRef.current = setInterval(() => {
+        paintText();
+      }, 10000);
+    }
+  };
+
+  useEffect(() => {
+    if (intRef) {
+      intRef.current = setInterval(() => {
+        paintText();
+      }, 10000);
+    }
+
+    return () => {
+      if (intRef) {
+        clearInterval(intRef.current!);
+      }
+    };
+  }, []);
 
   return (
-    <Wrapper
-      className={className}
-      style={style}
-      onClick={async () => {
-        await controls.start("hidden");
-        controls.start("visible");
-      }}
-    >
-      <span className="sr-only">{textArray.join(" ")}</span>
+    <Wrapper className={className} style={style} onClick={handleClick}>
       <motion.span
         ref={ref}
         initial="visible"
@@ -68,7 +90,6 @@ export const AnimatedText = ({
                     className="inline-block cursor-pointer"
                     variants={animation}
                     whileHover={{ scale: 1.3 }}
-                    //transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   >
                     {char}
                   </motion.span>

@@ -12,7 +12,7 @@ export default function ExplosionWrapper({
 }: PropsWithChildren): JSX.Element {
   const [scope, animate] = useAnimate();
 
-  const onButtonClick = () => {
+  const runEffect = () => {
     const sparkles = Array.from({ length: 20 });
     const sparklesAnimation: AnimationSequence = sparkles.map((_, index) => [
       `.sparkle-${index}`,
@@ -64,7 +64,7 @@ export default function ExplosionWrapper({
 
   return (
     <div ref={scope}>
-      <button onPointerDown={onButtonClick} className="relative">
+      <button onPointerDown={runEffect} className="relative">
         <span aria-hidden>
           {children}
           {Array.from({ length: 20 }).map((_, index) => (

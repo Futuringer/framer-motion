@@ -7,13 +7,6 @@ import { Header } from "../header/header";
 export function Foreground(): JSX.Element {
   return (
     <div className="w-full gap-12 flex justify-center flex-col items-center overflow-hidden">
-      {/* TODO: выяснить лучшую практику задания box-shadow и недостающих стилей в tailwind */}
-      {/* <h1
-        className="text-center text-9xl font-normal tracking-wider leading-snug max-w-4xl"
-        style={{ textShadow: "6px 6px 0px rgba(209,87,42,1)" }}
-      >
-        Happy New&nbsp;Year
-      </h1> */}
       <Header />
       <div className="grid w-2/3 gap-8 grid-cols-4 max-w-fit">
         <MagnetWrapper>
