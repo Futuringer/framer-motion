@@ -22,11 +22,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 320px;
+    min-width: 1224px;
     min-height: 100vh;
 
     div {
-      width:100%
+      width: 100%;
     }
   }
 }

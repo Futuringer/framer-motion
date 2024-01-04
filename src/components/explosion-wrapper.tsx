@@ -64,7 +64,7 @@ export default function ExplosionWrapper({
 
   return (
     <div ref={scope}>
-      <button onClick={onButtonClick} className="relative">
+      <button onPointerDown={onButtonClick} className="relative">
         <span aria-hidden>
           {children}
           {Array.from({ length: 20 }).map((_, index) => (

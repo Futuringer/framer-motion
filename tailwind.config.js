@@ -7,5 +7,5 @@ export default {
       customFont: ['"Audiowide"', "sans-serif"],
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss/nesting")],
 };

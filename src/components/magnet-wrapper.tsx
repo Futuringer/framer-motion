@@ -15,6 +15,7 @@ export default function MagnetWrapper({
       dragElastic={0.3}
       dragTransition={{ bounceStiffness: 80, bounceDamping: 80 }}
       className="pointer"
+      whileHover={{ scale: 1.2 }}
     >
       {children}
     </motion.div>
