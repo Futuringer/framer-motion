@@ -2,7 +2,7 @@
 # Проект Weather-App
 [Проект онлайн](https://futuringer.github.io/happy-new-year/)
 
-<img src="https://github.com/Futuringer/happy-new-year/assets/77829629/3d1f3e44-74f6-4449-8b28-ba94794248d8" width="50%"/>
+<img src="https://github.com/Futuringer/happy-new-year/assets/77829629/3d1f3e44-74f6-4449-8b28-ba94794248d8" width="100%"/>
 
 Тестовое задание, проект представляет из себя приложения прогноза погоды. 
 
